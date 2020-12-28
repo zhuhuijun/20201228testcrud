@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "_LayUITemplate";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/login.css" media="all" />
+}
+@section Scripts{
+    <script type="text/javascript">
+        //alert(parent.location);
+        //alert(window.location);
+        if (parent.location != window.location) {
+            parent.location = window.location;
+        }
+        //$(window).resize(function () {
+        //    if ($(".video-player").width() > $(window).width()) {
+        //        $(".video-player").css({ "height": $(window).height(), "width": "auto", "left": -($(".video-player").width() - $(window).width()) / 2 });
+        //    } else {
+        //        $(".video-player").css({ "width": $(window).width(), "height": "auto", "left": -($(".video-player").width() - $(window).width()) / 2 });
+        //    }
+        //}).resize();
+    </script>
+    <script type="text/javascript" src="~/page/login/login.js"></script>
+}
+<body>
+    <!--<video class="video-player" preload="auto" autoplay="autoplay" loop="loop" data-height="1080" data-width="1920" height="1080" width="1920">
+        <source src="~/page/login/login.mp4" type="video/mp4">-->
+        <!-- 此视频文件为支付宝所有，在此仅供样式参考，如用到商业用途，请自行更换为其他视频或图片，否则造成的任何问题使用者本人承担，谢谢 -->
+    <!--</video>-->
+    <div id="errorMsg" style="display:none">@ViewBag.ErrorMsg</div>
+    <div class="video_mask"></div>
+    <div class="login">
+        <h1>layuiCMS-管理登录</h1>
+        <form class="layui-form" id="loginForm" method="post" action="/Account/Login">
+            <div class="layui-form-item">
+                <input class="layui-input" name="UserName" placeholder="用户名" lay-verify="required" type="text" autocomplete="off">
+            </div>
+            <div class="layui-form-item">
+                <input class="layui-input" name="UserPwd" placeholder="密码" lay-verify="required" type="password" autocomplete="off">
+            </div>
+            <div class="layui-form-item form_code">
+                <input class="layui-input" name="CheckCode" placeholder="验证码" lay-verify="required" type="text" autocomplete="off">
+                <div class="code"><img src="../../images/code.jpg" width="116" height="36"></div>
+            </div>
+            <button class="layui-btn login_btn" lay-submit="" lay-filter="login">登录</button>
+        </form>
+    </div>
+</body>

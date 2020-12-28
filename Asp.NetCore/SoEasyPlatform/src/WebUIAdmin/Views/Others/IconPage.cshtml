@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "_LayUITemplate";
+}
+@model Sugar.Enties.Navigations
+@section css{
+    <style>
+        #iconPage {
+            margin: 10px 0;
+            border-bottom: 1px solid #e2e2e2;
+        }
+
+        .iconShow {
+            width: 280px;
+            padding: 10px;
+            line-height: 22px;
+        }
+
+            .iconShow i.iconfont {
+                text-align: center;
+                box-sizing: border-box;
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+                margin: 5px;
+            }
+
+                .iconShow i.iconfont:hover {
+                    background: #008c8c;
+                }
+
+                .iconShow i.iconfont.selected {
+                    background: #008c8c;
+                    color: #999;
+                }
+    </style>
+}
+@section Scripts{
+    <script type="text/javascript" src="~/page/others/others.js" media="all"></script>
+}
+<body>
+    <div id="iconPage"></div>
+    <div id="oldicon" style="display:none;">@ViewBag.OldIcon</div>
+</body>

@@ -1,0 +1,19 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+@section css{
+    <link rel="stylesheet" href="~/demo/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="~/lib/sweetalert/sweetalert2.min.css" media="all" />
+    <link rel="stylesheet" href="~/lib/toastr.js/toastr.min.css" media="all" />
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_tnyc012u2rlwstt9.css" media="all" />
+    @RenderSection("css", false)
+}
+@section Scripts{
+    <script type="text/javascript" src="~/demo/layui/layui.js"></script>
+    <script type="text/javascript" src="~/lib/sweetalert/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="~/lib/toastr.js/toastr.min.js"></script>
+    <script type="text/javascript" src="~/js/commonutils.js"></script>
+    @RenderSection("Scripts", required: false)
+}
+@RenderBody()

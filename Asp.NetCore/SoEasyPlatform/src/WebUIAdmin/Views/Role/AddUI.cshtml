@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "_LayUITemplate";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/user.css" media="all" />
+}
+@section Scripts{
+    <script type="text/javascript" src="~/page/roles/addui.js" media="all"></script>
+}
+<body class="childrenBody">
+    <form class="layui-form" action="" id="addform">
+        <div class="layui-form-item">
+            <label class="layui-form-label">角色名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="RoleName" class="layui-input newsName" lay-verify="required" placeholder="角色名称" lay-reqtext="登录名称不能为空" autocomplete="off">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">角色描述</label>
+            <div class="layui-input-block">
+                <input type="text" name="Description" class="layui-input newsName" lay-verify="required" placeholder="角色描述" lay-reqtext="显示名称不能为空" autocomplete="off">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">组名描述</label>
+            <div class="layui-input-block">
+                <input type="text" name="Description1" class="layui-input newsName" lay-verify="required" placeholder="角色描述" lay-reqtext="显示名称不能为空" autocomplete="off">
+            </div>
+        </div>
+        <div class="layui-form-item" style="margin-top:60px;">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" lay-filter="addUser">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+</body>

@@ -1,0 +1,37 @@
+{
+  "code": 200,
+  "msg": "",
+  "count": 76,
+  "data": [
+    {
+      "authorityId": 76,
+      "parentId": 0,
+      "authorityName": "返回码云",
+      "menuIcon": "fa fa-fa",
+      "authority": "1",
+      "createTime": "2020-09-29 15:56:18",
+      "open": true,
+      "checked": 0
+    },
+    {
+      "authorityId": 75,
+      "parentId": 74,
+      "authorityName": "关于",
+      "menuIcon": "fa fa-fa",
+      "authority": "1",
+      "createTime": "2020-09-29 15:56:18",
+      "open": true,
+      "checked": 0
+    },
+    {
+      "authorityId": 74,
+      "parentId": 0,
+      "authorityName": "测试页面",
+      "menuIcon": "fa fa-fa",
+      "authority": "1",
+      "createTime": "2020-09-29 15:56:18",
+      "open": true,
+      "checked": 0
+    }
+  ]
+}

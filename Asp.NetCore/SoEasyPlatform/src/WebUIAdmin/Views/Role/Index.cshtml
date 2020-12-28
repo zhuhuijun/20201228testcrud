@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "_LayUITemplate";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/user.css" media="all" />
+}
+@section Scripts{
+    <script type="text/javascript" src="~/page/roles/rolelist.js"></script>
+}
+<body class="childrenBody">
+    <blockquote class="layui-elem-quote news_search">
+        <div class="layui-inline">
+            <form id="searchForm">
+                <div class="layui-input-inline">
+                    <input type="text" name="RoleName" op="1" value="" placeholder="角色名" class="layui-input search_input">
+                </div>
+                <a class="layui-btn search_btn">查询</a>
+            </form>
+        </div>
+        @await Html.PartialAsync("ButtonsPartialView")
+        <partial></partial>
+        <div class="layui-inline" bsp-auth="assignUser">
+            <a class="layui-btn layui-btn-danger assignUser">分配用户</a>
+        </div>
+        <div class="layui-inline" bsp-auth="assignMenu">
+            <a class="layui-btn layui-btn-danger assignMenu">分配菜单</a>
+        </div>
+    </blockquote>
+    <div class="layui-form users_list">
+        <table class="layui-table">
+            <colgroup>
+                <col width="50">
+                <col>
+                <col width="18%">
+                <col width="14%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose" id="allChoose"></th>
+                    <th>角色名</th>
+                    <th>描述</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody class="users_content"></tbody>
+        </table>
+    </div>
+    <div id="page"></div>
+</body>

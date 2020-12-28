@@ -1,0 +1,71 @@
+﻿@{
+    Layout = "_LayUITemplate";
+}
+@model Sugar.Enties.Navigations
+@section css{
+    <link rel="stylesheet" href="~/css/user.css" media="all" />
+}
+@section Scripts{
+    <script type="text/javascript" src="~/page/menu/editui.js" media="all"></script>
+}
+<body class="childrenBody">
+
+    <form id="authoritiesEditForm" lay-filter="authoritiesEditForm" class="layui-form model-form"
+          style="padding-right: 20px;">
+        <input type="hidden" name="ID" value="@Model.ID" />
+        <input type="hidden" name="Target" value="_self" />
+        <input type="hidden" name="Application" value="BA" />
+        <div class="layui-form-item">
+            <label class="layui-form-label">父级名称</label>
+            <div class="layui-input-block">
+                @Html.DropDownList("ParentId", ViewBag.ParentId as SelectList, new { @class = "newsLook" })
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label layui-form-required">菜单名称:</label>
+            <div class="layui-input-block">
+                <input name="Name" placeholder="请输入菜单名称" class="layui-input"
+                       lay-verType="tips" lay-verify="required" required value="@Model.Name" />
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label layui-form-required">菜单类型:</label>
+            <div class="layui-input-block">
+                @Html.RadioButtonFor(Model => Model.IsResource, 0, new { @name = "isResource", @title = "菜单" })
+                @Html.RadioButtonFor(Model => Model.IsResource, 2, new { @name = "isResource", @title = "按钮" })
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label layui-form-required">菜单类别:</label>
+            <div class="layui-input-block">
+                <input name="Category" type="radio" value="0" title="系统菜单" checked />
+                <input name="Category" type="radio" value="1" title="外部菜单" />
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">菜单url:</label>
+            <div class="layui-input-block">
+                <input name="Url" placeholder="请输入菜单url" class="layui-input" value="@Model.Url" />
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">菜单图标:</label>
+            <div class="layui-input-block">
+                <input id="iconBtn" name="Icon" placeholder="请输入菜单图标" class="layui-input" value="@Model.Icon" />
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label layui-form-required">排序号:</label>
+            <div class="layui-input-block">
+                <input name="Order" placeholder="请输入排序号" type="number" class="layui-input"
+                       lay-verType="tips" lay-verify="required|number" required value="@Model.Order" />
+            </div>
+        </div>
+        <div class="layui-form-item" style="margin-top:30px;">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" lay-filter="editui">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+</body>

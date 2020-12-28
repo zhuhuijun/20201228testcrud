@@ -1,0 +1,39 @@
+﻿@model Sugar.Enties.Roles
+@{
+    Layout = "_LayUITemplate";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/user.css" media="all" />
+}
+@section Scripts{
+    <script type="text/javascript" src="~/page/roles/editui.js" media="all"></script>
+}
+<body class="childrenBody">
+    <form class="layui-form" action="" id="addform">
+        <input type="hidden" name="ID" value="@Model.ID" />
+        <div class="layui-form-item">
+            <label class="layui-form-label">角色名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="RoleName" value="@Model.RoleName" class="layui-input newsName" lay-verify="required" placeholder="登录名称" lay-reqtext="登录名称不能为空" autocomplete="off">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">角色描述</label>
+            <div class="layui-input-block">
+                <input type="text" name="Description" value="@Model.Description" class="layui-input newsName" lay-verify="required" placeholder="显示名称" lay-reqtext="显示名称不能为空" autocomplete="off">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">组名描述</label>
+            <div class="layui-input-block">
+                <input type="text" name="Description2" value="@Model.Description" class="layui-input newsName" lay-verify="required" placeholder="显示名称" lay-reqtext="显示名称不能为空" autocomplete="off">
+            </div>
+        </div>
+        <div class="layui-form-item" style="margin-top:80px;">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" lay-filter="editui">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+</body>

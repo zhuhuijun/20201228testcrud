@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "_LayUITemplate";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/user.css" media="all" />
+    <link rel="stylesheet" href="~/css/public.css" media="all" />
+}
+@section Scripts{
+    <script type="text/javascript" src="~/page/user/editui.js" media="all"></script>
+}
+<body class="childrenBody">
+    <form class="layui-form layui-row layui-col-space10">
+        <input type="hidden" name="userid" value="@ViewBag.UserId" id="userid"/>
+        <div class="layui-col-md3 layui-col-xs12">
+            <blockquote class="layui-elem-quote title"><i class="seraph icon-caidan"></i> 角色数据</blockquote>
+            <div class="border category" style="margin-top:3px;">
+                <div class="usercontainer">
+                    @{
+                        var users = ViewBag.UserDatas;
+                        foreach (LayuiCmsCore.Models.RoleCheckModel u in users)
+                        {
+                            if (u.RoleIsChecked)
+                            {
+                                <input type="checkbox" checked="checked" name="checked" data-id="@u.Id" title="@u.RoleName" lay-skin="primary" />
+                            }
+                            else
+                            {
+                                <input type="checkbox" name="checked" data-id="@u.Id" title="@u.RoleName" lay-skin="primary" />
+                            }
+
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item" style="margin-top:30px;">
+    
+                <button class="layui-btn layui-block"  lay-submit="" lay-filter="assignRole">保存授权数据</button>
+
+        </div>
+    </form>
+</body>

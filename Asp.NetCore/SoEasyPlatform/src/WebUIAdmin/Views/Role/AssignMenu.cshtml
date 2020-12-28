@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "_LayUITemplate";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/user.css" media="all" />
+    <link rel="stylesheet" href="~/css/public.css" media="all" />
+    <link rel="stylesheet" href="~/page/common/metroStyle/metroStyle.css" media="all" />
+}
+@section Scripts{
+    <script src="~/page/common/jquery.ztree.all.min.js"></script>
+    <script src="~/page/roles/editui.js"></script>
+    <SCRIPT type="text/javascript">
+        <!--
+        var setting = {
+            view: {
+                selectedMulti: false
+            },
+            check: {
+                enable: true
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            }
+        };
+        var zNodes= @Html.Raw(ViewBag.MenuData);
+        $(document).ready(function () {
+            $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+        });
+
+    </SCRIPT>
+}
+<body class="childrenBody" style="margin-top:5px !important;">
+    <form class="layui-form layui-row layui-col-space10">
+        <input type="hidden" name="rowid" value="@ViewBag.RowId" id="rowid" />
+        <div class="layui-col-md3 layui-col-xs12">
+            <blockquote class="layui-elem-quote title"><i class="seraph icon-caidan"></i> 菜单数据</blockquote>
+            <div class="border category" style="margin-top:3px;">
+                <div class="usercontainer" style="height:300px;overflow-y:auto;">
+                    <ul id="treeDemo" class="ztree"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item" style="margin-top:30px;">
+            <button class="layui-btn layui-block" lay-submit="" lay-filter="assignMenu">保存授权数据</button>
+        </div>
+    </form>
+</body>

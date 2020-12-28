@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "_LayUITemplateTree";
+}
+@section css{
+    <link rel="stylesheet" href="~/css/user.css" media="all" />
+    <style type="text/css">
+        .mymini {
+            height: 22px;
+            line-height: 22px;
+            padding: 0 5px;
+            font-size: 12px;
+        }
+    </style>
+}
+@section Scripts{
+    <script type="text/javascript" src="~/page/menu/list.js"></script>
+}
+<body class="childrenBody" style="margin:10px 10px;">
+    <blockquote class="layui-elem-quote news_search" style="margin-left:5px;">
+        <div id="iconid" style="display:none;"></div>
+        <div class="layui-inline">
+            <form id="searchForm">
+                <div class="layui-input-inline">
+                    <input type="text" id="MenuName" name="MenuName" op="1" value="" placeholder="菜单名称" class="layui-input search_input">
+                </div>
+                <a class="layui-btn search_btn">查询</a>
+            </form>
+        </div>
+        <div class="layui-inline" bsp-auth="add">
+            <a class="layui-btn layui-btn-normal usersAdd_btn">添加</a>
+        </div>
+        <div class="layui-inline">
+            <a id="btnExpandAll" class="layui-btn layui-btn-normal layui-btn-primary">
+                展开全部
+            </a>
+        </div>
+        <div class="layui-inline">
+            <a id="btnFoldAll" class="layui-btn layui-btn-normal layui-btn-primary">
+                折叠全部
+            </a>
+        </div>
+    </blockquote>
+    <div class="layui-form">
+        <div class="demo-side" style="margin:2px 5px;">
+            <table id="demoTreeTb"></table>
+        </div>
+    </div>
+
+    <!-- 表格操作列 -->
+    <script type="text/html" id="tbBar">
+        <a class="layui-btn layui-btn-warm mymini users_edit" lay-event="edit" bsp-auth="edit">编辑</a>
+        <a class="layui-btn layui-btn-danger mymini users_del" lay-event="del" bsp-auth="del">删除</a>
+    </script>
+    <script type="text/html" id="tbBarempty">
+        <span>无</span>
+    </script>
+
+</body>
